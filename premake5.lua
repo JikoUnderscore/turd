@@ -36,17 +36,19 @@ project "turdproj"
     }
 
     libdirs {
-       "/usr/local/lib"
+    --    "/usr/local/lib"
+        "./vendor/SDL2-2.24.0/build/build/.libs",
+        "./vendor/SDL_image/build/.libs"
     }
 
     filter "configurations:Debug"
-        buildoptions "-std=c++20 -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlong-long -Wnull-dereference -Wuseless-cast -Wdouble-promotion -Wformat=2 -Wdate-time"
+        buildoptions "-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlong-long -Wnull-dereference -Wuseless-cast -Wdouble-promotion -Wformat=2 -Wdate-time"
         
         defines { "DEBUG" }
         symbols "On"
 
     filter "configurations:Release"
-        buildoptions "-std=c++20 -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wuseless-cast -Wdouble-promotion -Wformat=2 -Wdate-time"
+        buildoptions "-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wuseless-cast -Wdouble-promotion -Wformat=2 -Wdate-time"
         defines { "NDEBUG" }
         -- optimize "On"
         optimize "Speed"
